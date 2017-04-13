@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9560BDF1E9E037000579417 /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9560BDE1E9E037000579417 /* ShadowViewController.swift */; };
 		D96EA6631E7A38A300E87CD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96EA6621E7A38A300E87CD0 /* AppDelegate.swift */; };
 		D96EA6651E7A38A300E87CD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96EA6641E7A38A300E87CD0 /* ViewController.swift */; };
 		D96EA6681E7A38A300E87CD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D96EA6661E7A38A300E87CD0 /* Main.storyboard */; };
@@ -17,9 +18,11 @@
 		D96EA6791E7A735E00E87CD0 /* PathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96EA6781E7A735E00E87CD0 /* PathViewController.swift */; };
 		D96EA67B1E7A86E000E87CD0 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96EA67A1E7A86E000E87CD0 /* Tools.swift */; };
 		D99974221E9C6FCF00DD3C2B /* BlendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99974211E9C6FCF00DD3C2B /* BlendViewController.swift */; };
+		D9AFCEFD1E9F0A75000371A8 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AFCEFC1E9F0A75000371A8 /* GradientViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9560BDE1E9E037000579417 /* ShadowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
 		D96EA65F1E7A38A300E87CD0 /* Quartz2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quartz2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96EA6621E7A38A300E87CD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D96EA6641E7A38A300E87CD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +35,7 @@
 		D96EA6781E7A735E00E87CD0 /* PathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathViewController.swift; sourceTree = "<group>"; };
 		D96EA67A1E7A86E000E87CD0 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		D99974211E9C6FCF00DD3C2B /* BlendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendViewController.swift; sourceTree = "<group>"; };
+		D9AFCEFC1E9F0A75000371A8 /* GradientViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9560BE01E9E037C00579417 /* vc */ = {
+			isa = PBXGroup;
+			children = (
+				D96EA6741E7A38BA00E87CD0 /* CanvasViewController.swift */,
+				D96EA6761E7A3AF200E87CD0 /* BitmapViewController.swift */,
+				D96EA6781E7A735E00E87CD0 /* PathViewController.swift */,
+				D99974211E9C6FCF00DD3C2B /* BlendViewController.swift */,
+				D9560BDE1E9E037000579417 /* ShadowViewController.swift */,
+				D9AFCEFC1E9F0A75000371A8 /* GradientViewController.swift */,
+			);
+			name = vc;
+			sourceTree = "<group>";
+		};
+		D9560BE11E9E038800579417 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				D96EA67A1E7A86E000E87CD0 /* Tools.swift */,
+			);
+			name = tool;
+			sourceTree = "<group>";
+		};
+		D9560BE21E9E039000579417 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				D96EA6641E7A38A300E87CD0 /* ViewController.swift */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
 		D96EA6561E7A38A300E87CD0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,13 +97,10 @@
 		D96EA6611E7A38A300E87CD0 /* Quartz2D */ = {
 			isa = PBXGroup;
 			children = (
+				D9560BE11E9E038800579417 /* tool */,
+				D9560BE21E9E039000579417 /* main */,
+				D9560BE01E9E037C00579417 /* vc */,
 				D96EA6621E7A38A300E87CD0 /* AppDelegate.swift */,
-				D96EA67A1E7A86E000E87CD0 /* Tools.swift */,
-				D96EA6641E7A38A300E87CD0 /* ViewController.swift */,
-				D96EA6741E7A38BA00E87CD0 /* CanvasViewController.swift */,
-				D96EA6761E7A3AF200E87CD0 /* BitmapViewController.swift */,
-				D96EA6781E7A735E00E87CD0 /* PathViewController.swift */,
-				D99974211E9C6FCF00DD3C2B /* BlendViewController.swift */,
 				D96EA6661E7A38A300E87CD0 /* Main.storyboard */,
 				D96EA6691E7A38A300E87CD0 /* Assets.xcassets */,
 				D96EA66B1E7A38A300E87CD0 /* LaunchScreen.storyboard */,
@@ -154,8 +184,10 @@
 			files = (
 				D99974221E9C6FCF00DD3C2B /* BlendViewController.swift in Sources */,
 				D96EA6651E7A38A300E87CD0 /* ViewController.swift in Sources */,
+				D9560BDF1E9E037000579417 /* ShadowViewController.swift in Sources */,
 				D96EA6771E7A3AF200E87CD0 /* BitmapViewController.swift in Sources */,
 				D96EA6751E7A38BA00E87CD0 /* CanvasViewController.swift in Sources */,
+				D9AFCEFD1E9F0A75000371A8 /* GradientViewController.swift in Sources */,
 				D96EA67B1E7A86E000E87CD0 /* Tools.swift in Sources */,
 				D96EA6631E7A38A300E87CD0 /* AppDelegate.swift in Sources */,
 				D96EA6791E7A735E00E87CD0 /* PathViewController.swift in Sources */,

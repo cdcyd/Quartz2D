@@ -64,24 +64,39 @@ class BlendView: UIView {
     
     override func draw(_ rect: CGRect) {
         
-        let colors = [UIColor.purple,UIColor.orange,UIColor.blue,UIColor.green,UIColor.red,UIColor.cyan,UIColor.brown]
-        let width = (self.bounds.width-180)/CGFloat(colors.count)
-        let height = width*CGFloat(colors.count)+90.0
+        let bgColors = [UIColor.init(red: 206.0/255.0, green: 185.0/255.0, blue: 126.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 194.0/255.0, green: 195.0/255.0, blue: 197.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 239.0/255.0, green:  90.0/255.0, blue: 150.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 147.0/255.0, green: 213.0/255.0, blue:  80.0/255.0, alpha: 1.0),
+                        UIColor.init(red:   0.0/255.0, green: 138.0/255.0, blue: 217.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 246.0/255.0, green: 138.0/255.0, blue:  24.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 162.0/255.0, green: 116.0/255.0, blue: 172.0/255.0, alpha: 1.0)]
+        
+        let fgColors = [UIColor.init(red: 162.0/255.0, green: 116.0/255.0, blue: 172.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 246.0/255.0, green: 138.0/255.0, blue:  24.0/255.0, alpha: 1.0),
+                        UIColor.init(red:   0.0/255.0, green: 138.0/255.0, blue: 217.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 147.0/255.0, green: 213.0/255.0, blue:  80.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 239.0/255.0, green:  90.0/255.0, blue: 150.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 194.0/255.0, green: 195.0/255.0, blue: 197.0/255.0, alpha: 1.0),
+                        UIColor.init(red: 206.0/255.0, green: 185.0/255.0, blue: 126.0/255.0, alpha: 1.0)]
+        
+        let width = (self.bounds.width-180)/7.0
+        let height = width*7.0+90.0
         
         let context = UIGraphicsGetCurrentContext()
         context?.setBlendMode(blendModel)
         
-        for i in 0..<colors.count {
+        for i in 0..<bgColors.count {
             context?.saveGState()
-            context?.setFillColor(colors[i].cgColor)
+            context?.setFillColor(bgColors[i].cgColor)
             context?.addRect(CGRect(x:0, y:CGFloat(i)*width, width:self.bounds.width, height:width))
             context?.fillPath()
             context?.restoreGState()
         }
         
-        for i in 0..<colors.count {
+        for i in 0..<fgColors.count {
             context?.saveGState()
-            context?.setFillColor(colors[i].cgColor)
+            context?.setFillColor(fgColors[i].cgColor)
             context?.addRect(CGRect(x:CGFloat(i)*width+90.0, y:0, width:width, height:height))
             context?.fillPath()
             context?.restoreGState()

@@ -13,7 +13,9 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
     var dataSource = [NSStringFromClass(CanvasViewController.self)+"-初识GraphicsCore",
                       NSStringFromClass(BitmapViewController.self)+"-位图",
                       NSStringFromClass(PathViewController.self)+"-路径",
-                      NSStringFromClass(BlendViewController.self)+"-混合"]
+                      NSStringFromClass(BlendViewController.self)+"-混合",
+                      NSStringFromClass(ShadowViewController.self)+"-阴影",
+                      NSStringFromClass(GradientViewController.self)+"-渐变"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
