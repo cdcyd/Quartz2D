@@ -99,6 +99,7 @@ class GradientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.edgesForExtendedLayout = .init(rawValue: 0)
         let view = GradientView(frame: self.view.bounds)
         self.view.addSubview(view)
     }

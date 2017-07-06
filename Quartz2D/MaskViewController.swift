@@ -1,41 +1,36 @@
 //
-//  ShadowViewController.swift
+//  MaskViewController.swift
 //  Quartz2D
 //
-//  Created by 佰道聚合 on 2017/4/12.
+//  Created by 佰道聚合 on 2017/4/14.
 //  Copyright © 2017年 cyd. All rights reserved.
 //
 
 import UIKit
 
-class shadowView: UIView {
+class MaskView: UIView {
     
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
+        let image = UIImage.init(cgImage: (UIImage(named: "mask")?.cgImage!)!, scale: 1.0, orientation: .up)
         
-        context?.setFillColor(UIColor.green.cgColor)
+        context?.translateBy(x: 0, y: 200)
+        context?.scaleBy(x: 1.0, y: -1.0)
+        context?.draw((image.cgImage)!, in: CGRect(x: 50, y: -50, width: 200, height: 200))
         
-        context?.saveGState()
-        context?.addRect(CGRect(x: 50, y: 100, width: 100, height: 100))
-        context?.setShadow(offset: CGSize(width:-15, height:15), blur: 8, color: UIColor.orange.cgColor)
-        context?.fillPath()
-        context?.restoreGState()
-        
-        context?.saveGState()
-        context?.addRect(CGRect(x: 50, y: 300, width: 100, height: 100))
-        context?.setShadow(offset: CGSize(width:-20, height:-20), blur: 10, color: UIColor.red.cgColor)
-        context?.fillPath()
-        context?.restoreGState()
+        let view = UIImageView(image: UIImage(named: "mask"))
+        view.frame = CGRect(x: 50, y: 300, width: 200, height: 200)
+        self.addSubview(view)
     }
 }
 
-class ShadowViewController: UIViewController {
+class MaskViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.edgesForExtendedLayout = .init(rawValue: 0)
-        let view = shadowView(frame: self.view.bounds)
+        let view = MaskView(frame: self.view.bounds)
         self.view.addSubview(view)
     }
 

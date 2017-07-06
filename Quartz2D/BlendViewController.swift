@@ -113,6 +113,7 @@ class BlendViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor.white
         self.edgesForExtendedLayout = .init(rawValue: 0)
         
@@ -160,7 +161,7 @@ class BlendViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let table = UITableView(frame: CGRect(x:0, y:y, width:self.view.bounds.width, height:self.view.bounds.height - y - 64.0), style: UITableViewStyle.grouped)
         table.delegate = self
         table.dataSource = self
-        table.separatorStyle = UITableViewCellSeparatorStyle.none
+        table.separatorStyle = .none
         table.tableFooterView = UIView()
         self.view.addSubview(table)
     }

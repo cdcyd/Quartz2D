@@ -1,41 +1,37 @@
 //
-//  ShadowViewController.swift
+//  TransparentViewController.swift
 //  Quartz2D
 //
-//  Created by 佰道聚合 on 2017/4/12.
+//  Created by 佰道聚合 on 2017/4/14.
 //  Copyright © 2017年 cyd. All rights reserved.
 //
 
 import UIKit
 
-class shadowView: UIView {
+class TransparentView: UIView {
     
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
+        context?.setShadow(offset: CGSize(width:-20, height:20), blur: 10, color: UIColor.green.cgColor)
         
-        context?.setFillColor(UIColor.green.cgColor)
-        
-        context?.saveGState()
-        context?.addRect(CGRect(x: 50, y: 100, width: 100, height: 100))
-        context?.setShadow(offset: CGSize(width:-15, height:15), blur: 8, color: UIColor.orange.cgColor)
-        context?.fillPath()
-        context?.restoreGState()
-        
-        context?.saveGState()
-        context?.addRect(CGRect(x: 50, y: 300, width: 100, height: 100))
-        context?.setShadow(offset: CGSize(width:-20, height:-20), blur: 10, color: UIColor.red.cgColor)
-        context?.fillPath()
-        context?.restoreGState()
+        context?.beginTransparencyLayer(auxiliaryInfo: nil)
+        context?.setFillColor(UIColor.orange.cgColor)
+        context?.fill(CGRect(x: 50, y: 100, width: 60, height: 60))
+        context?.setFillColor(UIColor.purple.cgColor)
+        context?.fill(CGRect(x: 80, y: 130, width: 60, height: 60))
+        context?.setFillColor(UIColor.brown.cgColor)
+        context?.fill(CGRect(x: 110, y: 160, width: 60, height: 60))
+        context?.endTransparencyLayer()
     }
 }
 
-class ShadowViewController: UIViewController {
+class TransparentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.edgesForExtendedLayout = .init(rawValue: 0)
-        let view = shadowView(frame: self.view.bounds)
+        let view = TransparentView(frame: self.view.bounds)
         self.view.addSubview(view)
     }
 

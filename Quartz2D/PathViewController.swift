@@ -112,6 +112,7 @@ class PathViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.edgesForExtendedLayout = .init(rawValue: 0)
         let view = PathView(frame: self.view.bounds)
         self.view.addSubview(view)

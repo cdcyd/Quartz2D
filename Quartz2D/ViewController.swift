@@ -15,13 +15,20 @@ class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSour
                       NSStringFromClass(PathViewController.self)+"-路径",
                       NSStringFromClass(BlendViewController.self)+"-混合",
                       NSStringFromClass(ShadowViewController.self)+"-阴影",
-                      NSStringFromClass(GradientViewController.self)+"-渐变"]
+                      NSStringFromClass(GradientViewController.self)+"-渐变",
+                      NSStringFromClass(TransparentViewController.self)+"-透明",
+                      NSStringFromClass(MaskViewController.self)+"-遮罩"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Quartz2D"
+        
         let tableView = UITableView(frame: self.view.bounds)
         tableView.delegate = self;
         tableView.dataSource = self;
+        tableView.separatorStyle = .none
+        tableView.tableFooterView = UIView()
         self.view.addSubview(tableView)
     }
     
