@@ -12,15 +12,15 @@ class MaskView: UIView {
     
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
-        let image = UIImage.init(cgImage: (UIImage(named: "mask")?.cgImage!)!, scale: 1.0, orientation: .up)
+        let image = UIImage.init(cgImage: (UIImage(named: "two_tigers")?.cgImage!)!, scale: 1.0, orientation: .up)
         
         context?.translateBy(x: 0, y: 200)
         context?.scaleBy(x: 1.0, y: -1.0)
-        context?.draw((image.cgImage)!, in: CGRect(x: 50, y: -50, width: 200, height: 200))
         
-        let view = UIImageView(image: UIImage(named: "mask"))
-        view.frame = CGRect(x: 50, y: 300, width: 200, height: 200)
-        self.addSubview(view)
+        let image1 = UIImage.init(cgImage: (UIImage(named: "two_tiger_mask")?.cgImage!)!, scale: 1.0, orientation: .up)
+        context?.clip(to: CGRect(x: 50, y: -50, width: 200, height: 200), mask: image1.cgImage!)
+
+        context?.draw((image.cgImage)!, in: CGRect(x: 50, y: -50, width: 200, height: 200))
     }
 }
 

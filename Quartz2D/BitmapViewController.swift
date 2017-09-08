@@ -11,7 +11,7 @@ import UIKit
 class BitmapView: UIView {
     
     override func draw(_ rect: CGRect) {
-        
+
         // 获取当前的上下文
         var context = self.createBitmapImage(width: 200, height: 300)
         
