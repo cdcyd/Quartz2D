@@ -10,14 +10,15 @@ import UIKit
 
 class ViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource {
 
-    var dataSource = [NSStringFromClass(CanvasViewController.self)+"-初识GraphicsCore",
+    var dataSource = [NSStringFromClass(CanvasViewController.self)+"-初识CoreGraphics",
                       NSStringFromClass(BitmapViewController.self)+"-位图",
                       NSStringFromClass(PathViewController.self)+"-路径",
                       NSStringFromClass(BlendViewController.self)+"-混合",
                       NSStringFromClass(ShadowViewController.self)+"-阴影",
                       NSStringFromClass(GradientViewController.self)+"-渐变",
                       NSStringFromClass(TransparentViewController.self)+"-透明",
-                      NSStringFromClass(MaskViewController.self)+"-遮罩"]
+                      NSStringFromClass(MaskViewController.self)+"-遮罩",
+                      NSStringFromClass(DrawIconViewController.self)+"-Icon"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

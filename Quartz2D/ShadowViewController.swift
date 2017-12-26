@@ -12,7 +12,6 @@ class shadowView: UIView {
     
     override func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
-        
         context?.setFillColor(UIColor.green.cgColor)
         
         context?.saveGState()

@@ -13,8 +13,8 @@ class PathView: UIView {
     override func draw(_ rect: CGRect) {
         
         let stringHeight = UIFont.boldSystemFont(ofSize: 12).lineHeight
-        let attributes = [NSFontAttributeName:UIFont.boldSystemFont(ofSize: 12),
-                          NSForegroundColorAttributeName:UIColor.white]
+        let attributes = [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 12),
+                          NSAttributedStringKey.foregroundColor:UIColor.white]
        
         drawString(str:"绘制点", point:CGPoint(x:15,y:40), attributes: attributes)
         drawString(str:"绘制直线", point:CGPoint(x:15,y:80), attributes: attributes)
@@ -39,7 +39,7 @@ class PathView: UIView {
         context?.addRect(CGRect(x:80, y:y1, width:1, height:1))
         context?.strokePath()
         // 点(圆形)(绘制的一个半径是0.5个像素的圆)
-        context?.addArc(center: CGPoint(x:100,y:y1), radius:0.5, startAngle:0 , endAngle:CGFloat(M_PI)*2, clockwise: true)
+        context?.addArc(center: CGPoint(x:100,y:y1), radius:0.5, startAngle:0 , endAngle:CGFloat(Float.pi)*2, clockwise: true)
         context?.strokePath()
         
         // 直线
@@ -72,10 +72,10 @@ class PathView: UIView {
         // 圆(描边)
         let y5 = 200.0 + stringHeight/2
         // 通过圆心、半径、角度、划线方向(方向可能会影响填充)画圆
-        context?.addArc(center: CGPoint(x:80+stringHeight/2,y:y5), radius:stringHeight/2, startAngle:0 , endAngle:CGFloat(M_PI)*2, clockwise: true)
+        context?.addArc(center: CGPoint(x:80+stringHeight/2,y:y5), radius:stringHeight/2, startAngle:0 , endAngle:CGFloat(Float.pi)*2, clockwise: true)
         context?.strokePath()
         // 圆(填充)
-        context?.addArc(center: CGPoint(x:120+stringHeight/2,y:y5), radius:stringHeight/2, startAngle:0 , endAngle:CGFloat(M_PI)*2, clockwise: true)
+        context?.addArc(center: CGPoint(x:120+stringHeight/2,y:y5), radius:stringHeight/2, startAngle:0 , endAngle:CGFloat(Float.pi)*2, clockwise: true)
         context?.fillPath()
         
         // 椭圆(描边)
@@ -90,12 +90,12 @@ class PathView: UIView {
         
         // 扇形(描边)
         let y7 = 280.0 + stringHeight/2
-        context?.addArc(center: CGPoint(x:80+stringHeight/2,y:y7), radius:stringHeight/2, startAngle:0 , endAngle:CGFloat(M_PI_2), clockwise: true)
+        context?.addArc(center: CGPoint(x:80+stringHeight/2,y:y7), radius:stringHeight/2, startAngle:0 , endAngle:CGFloat(Float.pi/2), clockwise: true)
         context?.addLine(to: CGPoint(x:80+stringHeight/2,y:y7))
         context?.closePath()
         context?.strokePath()
         // 扇形(填充)
-        context?.addArc(center: CGPoint(x:120+stringHeight/2,y:y7), radius:stringHeight/2, startAngle:0 , endAngle:CGFloat(M_PI_2), clockwise: true)
+        context?.addArc(center: CGPoint(x:120+stringHeight/2,y:y7), radius:stringHeight/2, startAngle:0 , endAngle:CGFloat(Float.pi/2), clockwise: true)
         context?.addLine(to: CGPoint(x:120+stringHeight/2,y:y7))
         context?.closePath()
         context?.fillPath()

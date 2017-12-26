@@ -42,8 +42,8 @@ class BlendCell: UITableViewCell {
         titleLabel.text = model?["title"] as String?
         detailLabel.text = model?["detail"] as String?
         
-        let attributes = [NSFontAttributeName:UIFont.systemFont(ofSize: 12)]
-        let size = stringSize(str: detailLabel.text! as NSString, size: CGSize(width:BlendCell.maxDetailWidth, height:999), attributes: attributes)
+        let attributes = [NSAttributedStringKey.font:UIFont.systemFont(ofSize: 12)]
+        let size = stringSize(str: detailLabel.text!, size: CGSize(width:BlendCell.maxDetailWidth, height:999), attributes: attributes)
         detailLabel.frame = CGRect(x: left, y: space*2+detailLabel.font.lineHeight, width: size.width, height: size.height)
     }
     
@@ -53,7 +53,7 @@ class BlendCell: UITableViewCell {
             return 44
         }
         
-        let size = stringSize(str: (model?["detail"])!, size: CGSize(width:self.maxDetailWidth, height:999), attributes: nil)
+        let size = stringSize(str: (model?["detail"])! as String, size: CGSize(width:self.maxDetailWidth, height:999), attributes: nil)
         return size.height + 15 * 3 + fontHeight(font: 14)
     }
 }

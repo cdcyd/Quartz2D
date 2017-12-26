@@ -24,14 +24,14 @@ public func fontHeight(font:CGFloat) -> CGFloat{
 }
 
 // 计算字符串宽高
-public func stringSize(str:NSString, size:CGSize, attributes:[String:Any]?) -> CGSize{
+public func stringSize(str:String, size:CGSize, attributes:[NSAttributedStringKey : Any]?) -> CGSize{
     var reSize = str.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: attributes, context: nil).size
     reSize = CGSize(width:Int(reSize.width+1), height:Int(reSize.height+1))
     return reSize
 }
 
 // 绘制字符串
-public func drawString(str:NSString, point:CGPoint, attributes:[String:Any]?){
+public func drawString(str:String, point:CGPoint, attributes:[NSAttributedStringKey : Any]?){
     str.draw(at:point, withAttributes:attributes)
 }
 

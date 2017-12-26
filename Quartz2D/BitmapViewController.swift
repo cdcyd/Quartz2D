@@ -11,14 +11,13 @@ import UIKit
 class BitmapView: UIView {
     
     override func draw(_ rect: CGRect) {
-
         // 获取当前的上下文
         var context = self.createBitmapImage(width: 200, height: 300)
         
         // 设置红色填充
         context?.setFillColor(UIColor(red: 1, green: 0, blue: 0, alpha: 1).cgColor)
         // 绘制一个矩形
-        context?.fill(CGRect(x: 0, y: 0, width: 300, height: 400))
+        context?.fill(CGRect(x: 0, y: 0, width: 200, height: 300))
         // 关闭反锯齿效果
         context?.setAllowsAntialiasing(false)
         
