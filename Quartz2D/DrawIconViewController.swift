@@ -35,9 +35,8 @@ class IconView: UIView {
 
         // 绘制文字
         let attributes = [NSAttributedStringKey.font:UIFont.boldSystemFont(ofSize: 50),
-                          NSAttributedStringKey.foregroundColor:UIColor.init(red: 166/255.0, green: 166/255.0, blue: 166/255.0, alpha: 1),
-                          NSAttributedStringKey.textEffect: NSAttributedString.TextEffectStyle.letterpressStyle] as [NSAttributedStringKey : Any]
-        let text = "CCTransition"
+                          NSAttributedStringKey.foregroundColor:UIColor.init(red: 166/255.0, green: 166/255.0, blue: 166/255.0, alpha: 1)] as [NSAttributedStringKey : Any]
+        let text = "Quartz2D"
         let size = stringSize(str: text, size: CGSize(width: 999, height: UIFont.boldSystemFont(ofSize: 50).lineHeight), attributes: attributes)
         let x = (UIScreen.main.bounds.width - size.width)/2
         let y = (UIScreen.main.bounds.width - size.height)/2
